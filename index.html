@@ -67,7 +67,10 @@
                 </ul>
             </nav> <!-- end s-header__nav-wrap -->
 
-            <a href="mailto:#0" class="btn btn--primary btn--small">
+            <!-- Calendly link widget begin -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+            <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/enterprise-raytech/call'});return false;" class="btn btn--primary btn--small">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 0l-6 22-8.129-7.239 7.802-8.234-10.458 7.227-7.215-1.754 24-12zm-15 16.668v7.332l3.258-4.431-3.258-2.901z"/></svg>
                 Get In Touch
             </a>
@@ -192,7 +195,7 @@
                 </div>
                 <div class="column large-6 w-900-stack">
                     <h1 class="display-1" data-aos="fade-up">
-                        We excel in developing top-notch mobile apps tailored to your needs.
+                        We excel in developing top-notch iOS/Android apps tailored to your needs.
                     </h1>
                 </div>
                 <div class="column large-6 w-900-stack">
@@ -249,6 +252,33 @@
             
             
     </section> <!-- end s-services -->
+
+ <!-- Calendly badge widget begin -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<script type="text/javascript">
+    window.onload = function() {
+        Calendly.initBadgeWidget({
+            url: 'https://calendly.com/enterprise-raytech/call',
+            text: '',
+            color: '#0069ff',
+            textColor: '#ffffff',
+            branding: undefined
+        });
+
+        // Add a delay to ensure the widget has been initialized
+        setTimeout(function() {
+            var badge = document.querySelector('.calendly-badge-widget');
+            if (badge) {
+                badge.style.opacity = '0';
+                badge.style.pointerEvents = 'none';
+            }
+        }, 1000);
+    };
+</script>
+<!-- Calendly badge widget end -->
+
+  
 
     <section id="portfolio" class="s-portfolio">
 
@@ -500,18 +530,17 @@
                 <h1 class="display-1">
                 Have an idea or an epic project in mind? Talk to
                 us. Let us work together and make something great.
-                Shoot us a message at
+                Book a call with us:
                 </h1>
             </div>
         </div> <!-- s-footer__top -->
 
-        <div class="row h-text-center">
-            <div class="column">
-                <p class="s-contact__email">
-                    <a href="mailto:#0">hello@flare.com</a>
-                </p>
-            </div>
-        </div>
+        <!-- Calendly inline widget begin -->
+        <div class="calendly-inline-widget" data-url="https://calendly.com/enterprise-raytech/call" style="min-width:320px;height:700px;overflow:hidden;background-color:#d8073c !important;"></div>
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<!-- Calendly inline widget end -->
+
+    
 
     </section>  <!-- end s-contact -->
 
@@ -548,7 +577,12 @@
             </div>
 
             <div class="column large-4 medium-12 s-footer__block--end">
-                <a href="mailto:#0" class="btn h-full-width">Let's Talk</a>
+                
+            <!-- Calendly link widget begin -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+            <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/enterprise-raytech/call'});return false;" class="btn h-full-width">                    
+                    Let's Talk</a>
 
                 <div class="ss-copyright">
                     <span>Copyright RayTech 2024</span> 
