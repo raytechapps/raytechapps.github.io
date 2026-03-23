@@ -1,486 +1,1709 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html lang="en">
 <head>
-        <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V5LVG970NZ"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RayTech — We Bring Your Vision To Life</title>
+  <meta name="description" content="RayTech is a premium app development studio founded by Rayyan Siddiqui — Microsoft's youngest engineer and Guinness World Record holder. We turn ideas into world-class digital products." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    gtag('config', 'G-V5LVG970NZ');
-    </script>
+    :root {
+      --black: #060608;
+      --red: #e0201e;
+      --red-dim: #a01614;
+      --red-glow: rgba(224, 32, 30, 0.18);
+      --white: #f5f5f0;
+      --grey: #8a8a8a;
+      --grey-dim: #2a2a2e;
+      --border: rgba(255,255,255,0.07);
+      --font-display: 'Syne', sans-serif;
+      --font-body: 'Outfit', sans-serif;
+    }
 
-    <!--- basic page needs
-    ================================================== -->
-    <meta charset="utf-8">
-    <title>RayTech Enterprises - Mobile App Development Company</title>
-    <meta name="description" content="We bring your idea to life.">
-    <meta name="author" content="RayTech">
+    html { scroll-behavior: smooth; }
 
-    <!-- mobile specific metas
-    ================================================== -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-weight: 400;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
 
-    <!-- CSS
-    ================================================== -->
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/vendor.css">
+    /* ─── NOISE OVERLAY ─── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.4;
+    }
 
-    <!-- script
-    ================================================== -->
-    <script src="js/modernizr.js"></script>
-    <script defer src="js/fontawesome/all.min.js"></script>
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 60px;
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(18px);
+      background: rgba(6,6,8,0.85);
+      transition: padding 0.3s;
+    }
 
-    <!-- favicons
-    ================================================== -->
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="site.webmanifest">
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
 
+    .logo-mark {
+      width: 34px;
+      height: 34px;
+    }
+
+    .logo-text {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 20px;
+      letter-spacing: 0.12em;
+      color: var(--white);
+    }
+
+    .logo-text span { color: var(--red); }
+
+    nav ul {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+
+    nav ul a {
+      color: var(--grey);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+
+    nav ul a:hover { color: var(--white); }
+
+    .nav-cta {
+      background: var(--red);
+      color: var(--white) !important;
+      padding: 10px 22px;
+      border-radius: 4px;
+      font-weight: 600 !important;
+      letter-spacing: 0.06em !important;
+      font-size: 13px !important;
+      transition: background 0.2s, transform 0.15s !important;
+    }
+
+    .nav-cta:hover { background: #c41a18 !important; transform: translateY(-1px); color: var(--white) !important; }
+
+    /* ─── SECTIONS ─── */
+    section { position: relative; z-index: 1; }
+
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 140px 0 80px;
+      overflow: hidden;
+    }
+
+    .hero-grid-lines {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 80px 80px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+    }
+
+    .hero-glow {
+      position: absolute;
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(224,32,30,0.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(224,32,30,0.4);
+      background: rgba(224,32,30,0.08);
+      padding: 7px 16px;
+      border-radius: 100px;
+      font-size: 13px;
+      color: #f08080;
+      font-weight: 500;
+      margin-bottom: 32px;
+      letter-spacing: 0.03em;
+    }
+
+    .hero-badge-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--red);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+
+    .hero-headline {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(48px, 7vw, 92px);
+      line-height: 1.0;
+      letter-spacing: -0.02em;
+      margin-bottom: 28px;
+      max-width: 820px;
+    }
+
+    .hero-headline em {
+      font-style: normal;
+      color: var(--red);
+    }
+
+    .hero-sub {
+      font-size: 18px;
+      color: var(--grey);
+      max-width: 560px;
+      line-height: 1.7;
+      margin-bottom: 48px;
+      font-weight: 300;
+    }
+
+    .hero-sub strong {
+      color: var(--white);
+      font-weight: 500;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--red);
+      color: var(--white);
+      padding: 15px 32px;
+      border-radius: 5px;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: #c41a18;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(224,32,30,0.35);
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--grey);
+      font-size: 15px;
+      font-weight: 500;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      padding: 15px 28px;
+      border-radius: 5px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .btn-ghost:hover { color: var(--white); border-color: rgba(255,255,255,0.2); }
+
+    /* ─── CREDIBILITY STRIP ─── */
+    #credibility {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 36px 0;
+      overflow: hidden;
+    }
+
+    .cred-inner {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+
+    .cred-item {
+      flex: 1;
+      min-width: 200px;
+      padding: 0 40px;
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .cred-item:last-child { border-right: none; }
+
+    /* ─── AS FEATURED IN ─── */
+    #featured-in {
+      padding: 64px 0 88px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .featured-wrap {
+      display: grid;
+      gap: 18px;
+      justify-items: start;
+    }
+
+    .featured-logos {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .brand-logo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.02);
+      color: rgba(245,245,240,0.86);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      transition: transform 0.15s, border-color 0.2s;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .brand-logo:hover {
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,0.18);
+    }
+
+    .cred-num {
+      font-family: var(--font-display);
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .cred-num span { color: var(--red); }
+
+    .cred-label {
+      font-size: 13px;
+      color: var(--grey);
+      font-weight: 400;
+      line-height: 1.4;
+    }
+
+    /* ─── SECTION HEADERS ─── */
+    .section-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(32px, 4vw, 52px);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+
+    .section-desc {
+      color: var(--grey);
+      font-size: 17px;
+      max-width: 520px;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    /* ─── SERVICES ─── */
+    #services {
+      padding: 120px 0;
+    }
+
+    .services-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+
+    .service-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      padding: 32px 28px;
+      transition: background 0.25s, border-color 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--red);
+      transform: scaleX(0);
+      transition: transform 0.3s;
+      transform-origin: left;
+    }
+
+    .service-card:hover { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.14); }
+    .service-card:hover::after { transform: scaleX(1); }
+
+    .service-icon {
+      font-size: 26px;
+      margin-bottom: 16px;
+    }
+
+    .service-name {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      margin-bottom: 8px;
+    }
+
+    .service-desc {
+      font-size: 13px;
+      color: var(--grey);
+      line-height: 1.6;
+    }
+
+    /* ─── CASE STUDIES ─── */
+    #work {
+      padding: 120px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .work-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 64px;
+    }
+
+    .case-studies {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      padding-bottom: 18px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .case-card {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      gap: 40px;
+      align-items: center;
+      padding: 40px 48px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.02);
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.25s;
+      position: relative;
+      overflow: hidden;
+      flex: 0 0 560px;
+      scroll-snap-align: start;
+      cursor: pointer;
+      text-align: left;
+      appearance: none;
+      font-family: var(--font-body);
+    }
+
+    .case-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: var(--red);
+      transform: scaleY(0);
+      transition: transform 0.3s;
+      transform-origin: bottom;
+    }
+
+    .case-card:hover { background: rgba(255,255,255,0.045); }
+    .case-card:hover::before { transform: scaleY(1); }
+
+    .case-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--red);
+      background: var(--red-glow);
+      border: 1px solid rgba(224,32,30,0.25);
+      padding: 4px 10px;
+      border-radius: 3px;
+      margin-bottom: 10px;
+    }
+
+    .case-client {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .case-platform {
+      font-size: 13px;
+      color: var(--grey);
+    }
+
+    .case-desc {
+      font-size: 15px;
+      color: rgba(245,245,240,0.7);
+      line-height: 1.6;
+    }
+
+    .case-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      text-align: right;
+    }
+
+    .case-stat-val {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .case-stat-label {
+      font-size: 12px;
+      color: var(--grey);
+    }
+
+    /* ─── FOUNDER ─── */
+    #founder {
+      padding: 120px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .founder-layout {
+      display: grid;
+      grid-template-columns: 5fr 4fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .founder-credentials {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin-top: 48px;
+    }
+
+    .cred-pill {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      padding: 18px 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .cred-pill-icon {
+      font-size: 18px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .cred-pill-text {
+      font-size: 13px;
+      color: rgba(245,245,240,0.7);
+      line-height: 1.5;
+    }
+
+    .cred-pill-text strong {
+      display: block;
+      font-weight: 600;
+      color: var(--white);
+      font-size: 13px;
+      margin-bottom: 2px;
+    }
+
+    .founder-visual {
+      position: relative;
+    }
+
+    .founder-img-wrap {
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .founder-img-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, transparent 60%, rgba(224,32,30,0.15) 100%);
+    }
+
+    .founder-photo {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      filter: grayscale(20%);
+    }
+
+    .founder-photo-placeholder {
+      width: 100%;
+      aspect-ratio: 4/5;
+      background: linear-gradient(135deg, #111114 0%, #1a1a1e 50%, #0f0f12 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      border: 1px solid var(--border);
+    }
+
+    .founder-photo-placeholder svg {
+      opacity: 0.15;
+    }
+
+    .founder-photo-placeholder p {
+      font-size: 13px;
+      color: var(--grey);
+      text-align: center;
+      padding: 0 24px;
+    }
+
+    .founder-tag-floating {
+      position: absolute;
+      bottom: -16px;
+      left: -16px;
+      background: var(--red);
+      padding: 12px 18px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      color: var(--white);
+      z-index: 2;
+    }
+
+    /* ─── PROCESS ─── */
+    #process {
+      padding: 120px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      margin-top: 64px;
+    }
+
+    .process-step {
+      padding: 40px 32px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      position: relative;
+    }
+
+    .step-num {
+      font-family: var(--font-display);
+      font-size: 64px;
+      font-weight: 800;
+      color: rgba(255,255,255,0.04);
+      line-height: 1;
+      margin-bottom: 24px;
+      letter-spacing: -0.04em;
+    }
+
+    .step-title {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .step-desc {
+      font-size: 14px;
+      color: var(--grey);
+      line-height: 1.6;
+    }
+
+    /* ─── TESTIMONIALS ─── */
+    #testimonials {
+      padding: 120px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-top: 64px;
+    }
+
+    .testimonial-card {
+      background: rgba(255,255,255,0.025);
+      border: 1px solid var(--border);
+      padding: 36px 32px;
+    }
+
+    .testimonial-stars {
+      color: var(--red);
+      font-size: 14px;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    .testimonial-quote {
+      font-size: 15px;
+      color: rgba(245,245,240,0.75);
+      line-height: 1.7;
+      margin-bottom: 28px;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .author-avatar {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--red-dim), #333);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--white);
+      flex-shrink: 0;
+    }
+
+    .author-name {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .author-title {
+      font-size: 12px;
+      color: var(--grey);
+    }
+
+    /* ─── CONTACT ─── */
+    #contact {
+      padding: 120px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .contact-points {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .contact-point {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .cp-icon {
+      width: 40px; height: 40px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.03);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+      border-radius: 4px;
+    }
+
+    .cp-text {
+      font-size: 14px;
+      color: var(--grey);
+      line-height: 1.5;
+    }
+
+    .cp-text strong {
+      display: block;
+      font-weight: 600;
+      color: var(--white);
+      font-size: 14px;
+      margin-bottom: 3px;
+    }
+
+    /* ─── FORM ─── */
+    .intake-form {
+      background: rgba(255,255,255,0.025);
+      border: 1px solid var(--border);
+      padding: 48px 44px;
+    }
+
+    .form-title {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 32px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-group.full { grid-column: span 2; }
+
+    label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--grey);
+    }
+
+    input, select, textarea {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 15px;
+      padding: 13px 16px;
+      border-radius: 4px;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+      width: 100%;
+    }
+
+    input::placeholder, textarea::placeholder { color: rgba(138,138,138,0.6); }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: rgba(224,32,30,0.5);
+      background: rgba(255,255,255,0.06);
+    }
+
+    select option { background: #111114; color: var(--white); }
+    textarea { resize: vertical; min-height: 110px; }
+
+    .form-submit {
+      margin-top: 8px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      background: var(--red);
+      color: var(--white);
+      border: none;
+      padding: 16px 32px;
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .submit-btn:hover { background: #c41a18; transform: translateY(-1px); }
+
+    .form-note {
+      text-align: center;
+      font-size: 12px;
+      color: var(--grey);
+      margin-top: 14px;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 48px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copy {
+      font-size: 13px;
+      color: var(--grey);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 28px;
+    }
+
+    .footer-links a {
+      font-size: 13px;
+      color: var(--grey);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--white); }
+
+    /* ─── CASE STUDY MODAL ─── */
+    body.modal-open { overflow: hidden; }
+
+    .case-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      z-index: 2000;
+    }
+
+    .case-modal-overlay.open { display: flex; }
+
+    .case-modal {
+      width: min(980px, 100%);
+      max-height: 82vh;
+      overflow: auto;
+      background: rgba(18,18,18,0.95);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px 28px 22px;
+      position: relative;
+    }
+
+    .case-modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      float: none;
+      margin: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.03);
+      color: var(--white);
+      cursor: pointer;
+      transition: transform 0.15s, border-color 0.2s;
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .case-modal-close:hover {
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,0.2);
+    }
+
+    .case-modal-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      padding-right: 48px;
+    }
+
+    .case-gallery {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+    }
+
+    .case-gallery-title {
+      font-size: 12px;
+      color: var(--grey);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .case-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .gallery-slot {
+      border: 1px dashed rgba(255,255,255,0.22);
+      background: rgba(255,255,255,0.02);
+      border-radius: 10px;
+      aspect-ratio: 16/10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(245,245,240,0.55);
+      font-size: 12px;
+      line-height: 1.4;
+      text-align: center;
+      padding: 10px;
+    }
+
+    /* ─── SCROLL REVEAL ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ─── MOBILE ─── */
+    @media (max-width: 900px) {
+      nav { padding: 16px 24px; }
+      nav ul { display: none; }
+      .container { padding: 0 24px; }
+      .services-layout, .founder-layout, .contact-layout { grid-template-columns: 1fr; gap: 48px; }
+      .process-steps { grid-template-columns: 1fr 1fr; }
+      .case-card { grid-template-columns: 1fr; gap: 16px; flex-basis: 320px; }
+      .case-stats { text-align: left; flex-direction: row; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .form-group.full { grid-column: span 1; }
+      .footer-inner { flex-direction: column; gap: 20px; text-align: center; }
+      .cred-inner { flex-direction: column; gap: 24px; }
+      .cred-item { border-right: none; border-bottom: 1px solid var(--border); padding: 0 0 24px; }
+      .work-header { flex-direction: column; align-items: flex-start; gap: 24px; }
+      .founder-credentials { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .hero-headline { font-size: 42px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr; }
+      .intake-form { padding: 32px 24px; }
+      .case-gallery-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ─── SUCCESS MESSAGE ─── */
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 32px;
+    }
+
+    .form-success .tick {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+
+    .form-success h3 {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .form-success p {
+      font-size: 14px;
+      color: var(--grey);
+    }
+  </style>
 </head>
+<body>
 
-<body id="top">
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">
+      <svg class="logo-mark" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="17" cy="9" r="3" fill="#e0201e"/>
+        <circle cx="7" cy="26" r="3" fill="#e0201e"/>
+        <circle cx="27" cy="26" r="3" fill="#e0201e"/>
+        <line x1="17" y1="9" x2="7" y2="26" stroke="#e0201e" stroke-width="1.5"/>
+        <line x1="17" y1="9" x2="27" y2="26" stroke="#e0201e" stroke-width="1.5"/>
+        <line x1="7" y1="26" x2="27" y2="26" stroke="#e0201e" stroke-width="1.5"/>
+      </svg>
+      <span class="logo-text">RAY<span>TECH</span></span>
+    </a>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#founder">About</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#contact" class="nav-cta">Book a Call</a></li>
+    </ul>
+  </nav>
 
-
-    <!-- preloader
-    ================================================== -->
-    <div id="preloader">
-        <div id="loader" class="dots-fade">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-grid-lines"></div>
+    <div class="hero-glow"></div>
+    <div class="container hero-inner">
+      <div class="hero-badge">
+        <div class="hero-badge-dot"></div>
+        Now onboarding Q2 2026 clients
+      </div>
+      <h1 class="hero-headline">
+        We Build Apps<br />That <em>Move</em><br />Markets.
+      </h1>
+      <p class="hero-sub">
+        RayTech is a <strong>premium software studio</strong> based in Canada. We turn ideas into world-class mobile and web products — fast, clean, and built to scale.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">
+          Start Your Project
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#work" class="btn-ghost">View Our Work</a>
+      </div>
     </div>
+  </section>
 
-
-    <!-- header
-    ================================================== -->
-    <header class="s-header">
-
-        <div class="s-header__logo">
-            <a href="index.html">
-                <img src="images/ray tech.png" alt="RayTech Enterprises">
-            </a>
+  <!-- CREDIBILITY STRIP -->
+  <section id="credibility">
+    <div class="container">
+      <div class="cred-inner">
+        <div class="cred-item reveal">
+          <div class="cred-num">20<span>+</span></div>
+          <div class="cred-label">Products shipped<br />across 8 industries</div>
         </div>
-
-        <div class="s-header__content">
-    
-            <nav class="s-header__nav-wrap">
-                <ul class="s-header__nav">
-                    <li><a class="smoothscroll" href="#hero" title="Intro">Home</a></li>
-                    <li><a class="smoothscroll" href="#about" title="About">About</a></li>
-                    <li><a class="smoothscroll" href="#services" title="Services">Services</a></li>
-                    <li><a class="smoothscroll" href="#portfolio" title="Works">Works</a></li>
-                    <li><a  href="https://docs.google.com/presentation/d/1N4yOuUoBO7w4QVyXlY4kpOzGMVAF3oC4cNXvEs9c2tg/embed?start=false&loop=false&delayms=5000" title="Case Studies">Case Studies</a></li>
-                    <li><a  href="https://medium.com/@rayyansiddiqui04" title="Blog">Blog</a></li>
-                </ul>
-            </nav> <!-- end s-header__nav-wrap -->
-
-            <!-- Calendly link widget begin -->
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-            <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/enterprise-raytech/call'});return false;" class="btn btn--primary btn--small">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 0l-6 22-8.129-7.239 7.802-8.234-10.458 7.227-7.215-1.754 24-12zm-15 16.668v7.332l3.258-4.431-3.258-2.901z"/></svg>
-                Get In Touch
-            </a>
-
-        </div> <!-- end header-content -->
-
-        <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
-
-    </header> <!-- end s-header -->
-
-
-    <!-- hero
-    ================================================== -->
-    <section id="hero" class="s-hero target-section">
-
-        <div class="s-hero__bg">
-            <div class="gradient-overlay"></div>
+        <div class="cred-item reveal">
+          <div class="cred-num"><span>#</span>1</div>
+          <div class="cred-label">Guinness World Record<br />Youngest Software Engineer</div>
         </div>
-
-        <div class="row s-hero__content">
-            <div class="column">
-
-                <h1>Hello.</h1>
-                <div class="s-hero__content-about">
-
-                    <p>
-                    We are RayTech. We love <br>
-                    bringing great app <br>
-                    ideas to reality.
-                    </p>
-    
-                    <footer>
-                        <div class="s-hero__content-social">
-                            <a href="https://www.facebook.com/profile.php?id=61561857297333"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-                            <a href="https://www.linkedin.com/company/103741950"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-                            <a href="https://www.instagram.com/raytech.apps"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-                        </div>
-                    </footer>
-                </div>
-
-            </div>
+        <div class="cred-item reveal">
+          <div class="cred-num">5<span>+</span></div>
+          <div class="cred-label">Years building<br />client products</div>
         </div>
-
-    
-
-        <div class="s-hero__scroll">
-            <a href="#about" class="s-hero__scroll-link smoothscroll">
-                Scroll Down
-            </a>
+        <div class="cred-item reveal">
+          <div class="cred-num"><span>∞</span></div>
+          <div class="cred-label">Microsoft-trained<br />engineering standards</div>
         </div>
+      </div>
+    </div>
+  </section>
 
-    </section> <!-- end s-hero -->
-
-
-    <!-- about
-    ================================================== -->
-    <section id="about" class="s-about">
-
-        <div class="horizontal-line"></div>
-
-        <div class="row">
-            <div class="column large-12">
-
-                <div class="section-title" data-num="01" data-aos="fade-up">
-                    <h3 class="h6">Who We Are</h3>
-                </div>
-
-            </div>
-            <div class="column large-6 w-900-stack s-about__intro-text">
-                <h1 class="display-1" data-aos="fade-up">
-                    Founded by the <a href="https://www.rayyansiddiqui.com" target="_blank" style="color: red;">World's Youngest Software Engineer</a>, RayTech is a leading mobile app development company building digital experiences. 
-                </h1>
-                <p class="lead" data-aos="fade-up">
-                    We specialize in creating user-friendly and innovative mobile apps. Our expert team is available for 
-                </p>
-            </div>
-            
-            <div class="column large-6 w-900-stack s-about__photo-block">
-                <div class="s-about__photo" data-aos="fade-up"></div>
-            </div>
-            </div>
-
-            <div class="row block-large-1-2 block-tab-full s-about__process item-list">
-                <!-- Service 1: Develop -->
-                <div class="column item item-process" data-aos="fade-up">
-                    <h3 class="item-title">Development</h3>
-                    <p>
-                        Our team works with you to understand your vision and requirements. Together, we define the project's scope and goals to create a custom mobile app that aligns with your business needs.
-                    </p>
-                </div>
-                
-                <!-- Service 2: Hire -->
-                <div class="column item item-process" data-aos="fade-up">
-                    <h3 class="item-title">Hire</h3>
-                    <p>
-                        Our team is available to help when you need extra hands on deck. Your can hire our experienced developers to assist with your current projects. With transparent pricing and hourly billing, your success is our priority.
-                    </p>
-                </div>
-
-            </div>
-            
-            
-            </section> <!-- end s-about -->
-            
-            <!-- services
-            ================================================== -->
-            <section id="services" class="s-services">
-            
-            <div class="row">
-                <div class="column large-12">
-                    <div class="section-title" data-num="02" data-aos="fade-up">
-                        <h3 class="h6">Our Expertise</h3>
-                    </div>
-                </div>
-                <div class="column large-6 w-900-stack">
-                    <h1 class="display-1" data-aos="fade-up">
-                        We excel in developing top-notch iOS/Android apps tailored to your needs.
-                    </h1>
-                </div>
-                <div class="column large-6 w-900-stack">
-                    <p class="lead" data-aos="fade-up">
-                    Our team of experts is proficient in various areas to ensure your app's success. From design to deployment, we've got you covered.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="row block-large-1-2 block-tab-full s-services__services item-list">
-                <div class="column item item-service" data-aos="fade-up">
-                    <span class="service-icon service-icon--product-design"></span>
-                    <h3 class="item-title">App Design</h3>
-                    <p>
-                    We create user-centric and attractive designs for your mobile apps.
-                    </p>
-                </div>
-                <div class="column item item-service" data-aos="fade-up">
-                    <span class="service-icon service-icon--branding"></span>
-                    <h3 class="item-title">App Development</h3>
-                    <p>
-                    We develop high-quality and reliable mobile apps tailored to your needs.
-                    </p>
-                </div>
-                <div class="column item item-service" data-aos="fade-up">
-                    <span class="service-icon service-icon--frontend"></span>
-                    <h3 class="item-title">Frontend Development</h3>
-                    <p>
-                    We create seamless and responsive user interfaces for your app.
-                    </p>
-                </div>
-                <div class="column item item-service" data-aos="fade-up">
-                    <span class="service-icon service-icon--research"></span>
-                    <h3 class="item-title">Backend Integration</h3>
-                    <p>
-                    We ensure smooth integration with your backend systems and APIs.
-                    </p>
-                </div>
-                <div class="column item item-service" data-aos="fade-up">
-                    <span class="service-icon service-icon--illustration"></span>
-                    <h3 class="item-title">Testing & QA</h3>
-                    <p>
-                    We thoroughly test your app to ensure it is bug-free and runs smoothly.
-                    </p>
-                </div>
-                <div class="column item item-service" data-aos="fade-up">
-                    <span class="service-icon service-icon--ecommerce"></span>
-                    <h3 class="item-title">Support & Maintenance</h3>
-                    <p>
-                    We provide ongoing support and maintenance to keep your app updated and running smoothly.
-                    </p>
-                </div>
-            </div>
-            
-            
-    </section> <!-- end s-services -->
-
- <!-- Calendly badge widget begin -->
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-<script type="text/javascript">
-    window.onload = function() {
-        Calendly.initBadgeWidget({
-            url: 'https://calendly.com/enterprise-raytech/call',
-            text: '',
-            color: '#0069ff',
-            textColor: '#ffffff',
-            branding: undefined
-        });
-
-        // Add a delay to ensure the widget has been initialized
-        setTimeout(function() {
-            var badge = document.querySelector('.calendly-badge-widget');
-            if (badge) {
-                badge.style.opacity = '0';
-                badge.style.pointerEvents = 'none';
-            }
-        }, 1000);
-    };
-</script>
-<!-- Calendly badge widget end -->
-
-  
-
-    <section id="portfolio" class="s-portfolio">
-
-        <div class="row s-porfolio__top">
-            <div class="column large-6 w-900-stack">
-                <div class="section-title" data-num="03" data-aos="fade-up">
-                    <h3 class="h6">Recent Works</h3>
-                </div>
-            </div>
-
-
-           
-        </div> <!-- end s-portfolio__top-->
-
-        
-        <div class="row narrower s-clients__top h-text-center">
-            <div class="column">
-                <h1 class="display-1" data-aos="fade-up">
-                We've had the privilege of working with
-                some of the largest and most iconic brands<br>
-                <a href="https://docs.google.com/presentation/d/1N4yOuUoBO7w4QVyXlY4kpOzGMVAF3oC4cNXvEs9c2tg/embed?start=false&loop=false&delayms=5000" target="_blank" style="color: red; font-size: small;">(View Case Studies)</a>
-            </h1>
-            </div>
-        </div> <!-- s-clients__top -->
-
-        <div class="row clients-outer">
-            <div class="column">
-                <div class="clients" data-aos="fade-up">
-                    
-                    <a href="#0" title="" class="clients__slide"><img src="images/icons/clients/microsoft.png" /></a>
-                    <a href="#0" title="" class="clients__slide"><img src="images/icons/clients/orrcaaa.png"/></a>
-                    <a href="#0" title="" class="clients__slide"><img src="images/icons/clients/kin.png" /></a>
-                    <a href="#0" title="" class="clients__slide"><img src="images/icons/clients/ranimea.png" /></a>
-                    <a href="#0" title="" class="clients__slide"><img src="images/icons/clients/uber.png" /></a>
-                    <a href="#0" title="" class="clients__slide"><img src="images/icons/clients/bcma.png" /></a>
-                    <a href="#0" title="" class="clients__slide"><img src="images/icons/clients/jessieberg.png" /></a>
-                     
-                </div> <!-- end clients -->
-            </div> <!-- end column -->
-        </div> <!-- end clients-outer -->
-
-        
-    <div class="row testimonials collapse">
-
-        <div class="column large-12">
-
-            <iframe width="315" height="560" 
-            src="https://www.youtube.com/embed/imaqYcY6Ro0" 
-            title="YouTube video player" frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media;
-            gyroscope; picture-in-picture;
-            web-share"
-            allowfullscreen></iframe>
-
-            <iframe width="315" height="560" 
-            src="https://www.youtube.com/embed/c1-dCg6DS68" 
-            title="YouTube video player" frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media;
-            gyroscope; picture-in-picture;
-            web-share"
-            allowfullscreen></iframe>
-            
-            <iframe width="315" height="560" 
-            src="https://www.youtube.com/embed/6VGmPRGlt0s" 
-            title="YouTube video player" frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media;
-            gyroscope; picture-in-picture;
-            web-share"
-            allowfullscreen></iframe>
-        
-        </div> <!-- end column -->
-
-    </div> <!-- end row -->
-
-
-    </section> <!-- end s-portfolio -->
-
-    <!-- contact
-    ================================================== -->
-    <section class="s-contact">
-
-        <div class="row narrower s-contact__top h-text-center">
-            <div class="column">
-                <h3 class="h6">Get In Touch</h3>
-                <h1 class="display-1">
-                Have an idea or an epic project in mind? Talk to
-                us. Let us work together and make something great.
-                Book a call with us:
-                </h1>
-            </div>
-        </div> <!-- s-footer__top -->
-
-        <!-- Calendly inline widget begin -->
-        <div class="calendly-inline-widget" data-url="https://calendly.com/enterprise-raytech/call" style="min-width:320px;height:700px;overflow:hidden;background-color:#d8073c !important;"></div>
-        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-        <!-- Calendly inline widget end -->
-
-    </section>  <!-- end s-contact -->
-
-
-    <!-- footer
-    ================================================== -->
-    <footer class="s-footer">
-        <div class="row row-y-top">
-
-            <div class="column large-8 medium-12">
-                <div class="row">
-                    <div class="column large-7 tab-12 s-footer__block">
-                        <h4 class="h6">How to Reach Us</h4>
-        
-                        <p>                                
-                    <a href="mailto:info@raytechlab.co" class="underline-on-hover">info@raytechlab.co</a><br>
-                    <a href="tel:17789684174" class="underline-on-hover">+1 778-968-4174</a><br>
-                        523 Gatensbury St. <br>
-                        Vancouver, BC, Canada<br>
-                        </p>
-                    </div>
-        
-                    <div class="column large-5 tab-12 s-footer__block">
-                        <h4 class="h6">Follow Us</h4 class="h6">
-        
-                        <ul class="s-footer__list">
-                            <li><a href="https://www.facebook.com/profile.php?id=61561857297333">Facebook</a></li>
-                            <li><a href="https://www.linkedin.com/company/103741950">LinkedIn</a></li>
-                            <li><a href="https://www.instagram.com/raytech.apps">Instagram</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="column large-4 medium-12 s-footer__block--end">
-                
-            <!-- Calendly link widget begin -->
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-            <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/enterprise-raytech/call'});return false;" class="btn h-full-width">                    
-                    Let's Talk</a>
-
-                <div class="ss-copyright">
-                    <span>Copyright RayTech 2024</span> 
-                </div>
-            </div>
-
-            <div class="ss-go-top">
-                <a class="smoothscroll" title="Back to Top" href="#top">
-                    ^
-                </a>
-            </div> <!-- end ss-go-top -->
-
+  <!-- AS FEATURED IN -->
+  <section id="featured-in">
+    <div class="container">
+      <div class="featured-wrap reveal">
+        <div class="section-tag">As Featured In</div>
+        <div class="featured-logos">
+          <div class="brand-logo">Microsoft</div>
+          <div class="brand-logo">Guinness World Record</div>
+          <div class="brand-logo">CBC</div>
+          <a class="brand-logo" href="https://www.instagram.com/raytech.apps" target="_blank" rel="noopener noreferrer">Instagram</a>
         </div>
-    </footer>
-    
+      </div>
+    </div>
+  </section>
 
-    <!-- photoswipe background
-    ================================================== -->
-    <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
-
-        <div class="pswp__bg"></div>
-        <div class="pswp__scroll-wrap">
-
-            <div class="pswp__container">
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-            </div>
-
-            <div class="pswp__ui pswp__ui--hidden">
-                <div class="pswp__top-bar">
-                    <div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title=
-                    "Share"></button> <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom" title=
-                    "Zoom in/out"></button>
-                    <div class="pswp__preloader">
-                        <div class="pswp__preloader__icn">
-                            <div class="pswp__preloader__cut">
-                                <div class="pswp__preloader__donut"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                    <div class="pswp__share-tooltip"></div>
-                </div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button> <button class="pswp__button pswp__button--arrow--right" title=
-                "Next (arrow right)"></button>
-                <div class="pswp__caption">
-                    <div class="pswp__caption__center"></div>
-                </div>
-            </div>
-
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="container">
+      <div class="services-layout">
+        <div class="reveal">
+          <div class="section-tag">What We Do</div>
+          <h2 class="section-title">Software built to a different standard.</h2>
+          <p class="section-desc">From MVP to enterprise-grade — we deliver products that are fast to market and built to last. Every line written with intention.</p>
+          <br/><br/>
+          <a href="#contact" class="btn-primary" style="display:inline-flex;">
+            Get a Free Quote
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
         </div>
+        <div class="services-grid reveal">
+          <div class="service-card">
+            <div class="service-icon">📱</div>
+            <div class="service-name">Mobile Apps</div>
+            <div class="service-desc">iOS & Android. Native or cross-platform. From concept to App Store.</div>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🌐</div>
+            <div class="service-name">Web Apps</div>
+            <div class="service-desc">Full-stack web platforms, dashboards, SaaS products.</div>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🤖</div>
+            <div class="service-name">AI Integration</div>
+            <div class="service-desc">LLM-powered features, automation flows, AI-first products.</div>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🔄</div>
+            <div class="service-name">Retainer Support</div>
+            <div class="service-desc">Ongoing engineering support. Your dev team on demand.</div>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🚀</div>
+            <div class="service-name">MVP Sprints</div>
+            <div class="service-desc">Go from idea to live product in 4–8 weeks. Fast validation.</div>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🏥</div>
+            <div class="service-name">Health & Wellness</div>
+            <div class="service-desc">Specialized experience in healthcare and wellness platforms.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    </div> <!-- end photoSwipe background -->
+  <!-- CASE STUDIES -->
+  <section id="work">
+    <div class="container">
+      <div class="work-header reveal">
+        <div>
+          <div class="section-tag">Case Studies</div>
+          <h2 class="section-title">Real products. Real results.</h2>
+        </div>
+        <p class="section-desc" style="max-width:380px;">20+ projects shipped. Here's a handful of what we've built.</p>
+      </div>
 
+      <div class="case-studies">
 
-    <!-- Java Script
-    ================================================== -->
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
+        <!-- KINETIX -->
+        <button type="button" class="case-card reveal" onclick="openCaseModal(this)" aria-haspopup="dialog">
+          <div>
+            <div class="case-tag">Health & Fitness</div>
+            <div class="case-client">Kinetix</div>
+            <div class="case-platform">iOS + Android</div>
+          </div>
+          <div class="case-desc">
+            Built an all-in-one physiotherapy platform connecting practitioners and patients worldwide. Personalized rehab programs, progress tracking, and a PT-to-client dashboard.
+          </div>
+          <div class="case-stats">
+            <div>
+              <div class="case-stat-val">2</div>
+              <div class="case-stat-label">Platforms launched</div>
+            </div>
+            <div>
+              <div class="case-stat-val">6wk</div>
+              <div class="case-stat-label">Delivery timeline</div>
+            </div>
+          </div>
+        </button>
 
+        <!-- DUMMY 2 -->
+        <button type="button" class="case-card reveal" onclick="openCaseModal(this)" aria-haspopup="dialog">
+          <div>
+            <div class="case-tag">EdTech</div>
+            <div class="case-client">LearnFlow</div>
+            <div class="case-platform">Web + Mobile</div>
+          </div>
+          <div class="case-desc">
+            Developed a full e-learning platform with live sessions, course management, and student analytics for a North American education startup.
+          </div>
+          <div class="case-stats">
+            <div>
+              <div class="case-stat-val">1.2k</div>
+              <div class="case-stat-label">Students onboarded</div>
+            </div>
+            <div>
+              <div class="case-stat-val">8wk</div>
+              <div class="case-stat-label">MVP to launch</div>
+            </div>
+          </div>
+        </button>
+
+        <!-- DUMMY 3 -->
+        <button type="button" class="case-card reveal" onclick="openCaseModal(this)" aria-haspopup="dialog">
+          <div>
+            <div class="case-tag">Marketplace</div>
+            <div class="case-client">TradeLocal</div>
+            <div class="case-platform">iOS + Web</div>
+          </div>
+          <div class="case-desc">
+            Built a two-sided marketplace app for local service providers and consumers, including booking flows, in-app payments, and real-time chat.
+          </div>
+          <div class="case-stats">
+            <div>
+              <div class="case-stat-val">3k+</div>
+              <div class="case-stat-label">Transactions month 1</div>
+            </div>
+            <div>
+              <div class="case-stat-val">4.8★</div>
+              <div class="case-stat-label">App Store rating</div>
+            </div>
+          </div>
+        </button>
+
+        <!-- DUMMY 4 -->
+        <button type="button" class="case-card reveal" onclick="openCaseModal(this)" aria-haspopup="dialog">
+          <div>
+            <div class="case-tag">SaaS</div>
+            <div class="case-client">FlowDesk</div>
+            <div class="case-platform">Web App</div>
+          </div>
+          <div class="case-desc">
+            Architected and delivered a B2B SaaS operations dashboard with multi-tenant support, role-based access, and real-time reporting.
+          </div>
+          <div class="case-stats">
+            <div>
+              <div class="case-stat-val">40%</div>
+              <div class="case-stat-label">Ops time saved</div>
+            </div>
+            <div>
+              <div class="case-stat-val">$0</div>
+              <div class="case-stat-label">Infrastructure bugs at launch</div>
+            </div>
+          </div>
+        </button>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CASE STUDY MODAL (popup gallery) -->
+  <div
+    class="case-modal-overlay"
+    id="caseModalOverlay"
+    aria-hidden="true"
+    onclick="if (event.target === this) closeCaseModal()"
+  >
+    <div class="case-modal" role="dialog" aria-modal="true" aria-labelledby="caseModalTitle">
+      <button type="button" class="case-modal-close" aria-label="Close" onclick="closeCaseModal()">×</button>
+
+      <div class="case-modal-top">
+        <div>
+          <div id="caseModalTag" class="case-tag" style="margin-bottom: 12px;"></div>
+          <h3 id="caseModalTitle" class="case-client" style="margin-bottom: 4px;"></h3>
+          <div id="caseModalPlatform" class="case-platform"></div>
+        </div>
+      </div>
+
+      <p id="caseModalDesc" class="case-desc" style="margin-top: 16px;"></p>
+      <div id="caseModalStats" class="case-stats" style="margin-top: 18px;"></div>
+
+      <div class="case-gallery">
+        <div class="case-gallery-title">App Screenshots (placeholders)</div>
+        <div class="case-gallery-grid">
+          <div class="gallery-slot">Add screenshot<br/>1</div>
+          <div class="gallery-slot">Add screenshot<br/>2</div>
+          <div class="gallery-slot">Add screenshot<br/>3</div>
+          <div class="gallery-slot">Add screenshot<br/>4</div>
+          <div class="gallery-slot">Add screenshot<br/>5</div>
+          <div class="gallery-slot">Add screenshot<br/>6</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOUNDER -->
+  <section id="founder">
+    <div class="container">
+      <div class="founder-layout">
+        <div class="reveal">
+          <div class="section-tag">The Founder</div>
+          <h2 class="section-title">Rayyan Siddiqui</h2>
+          <p class="section-desc" style="max-width:100%">
+            When you hire RayTech, you're not working with a faceless agency. You're working with me — and my standards come from years at the top.
+          </p>
+          <br/>
+          <p style="font-size:15px; color:rgba(245,245,240,0.65); line-height:1.7; max-width:560px;">
+            I became Microsoft's youngest software engineer at 16, hold the Guinness World Record for the youngest software engineer ever, and was recognized as a changemaker in Microsoft's 50th anniversary global campaign. I started coding at 9. I've shipped products in healthcare, fitness, education, and commerce.
+            <br/><br/>
+            RayTech is my studio — every project gets my personal attention and my engineering standards.
+          </p>
+          <div class="founder-credentials">
+            <div class="cred-pill">
+              <div class="cred-pill-icon">🏆</div>
+              <div class="cred-pill-text">
+                <strong>Guinness World Record</strong>
+                Youngest software engineer in the world
+              </div>
+            </div>
+            <div class="cred-pill">
+              <div class="cred-pill-icon">💼</div>
+              <div class="cred-pill-text">
+                <strong>Microsoft Engineer</strong>
+                Joined at 16 — youngest in company history
+              </div>
+            </div>
+            <div class="cred-pill">
+              <div class="cred-pill-icon">🎤</div>
+              <div class="cred-pill-text">
+                <strong>MISK Global Forum</strong>
+                Opening Keynote Speaker, 2025
+              </div>
+            </div>
+            <div class="cred-pill">
+              <div class="cred-pill-icon">🇨🇦</div>
+              <div class="cred-pill-text">
+                <strong>PM Recognition</strong>
+                Recognized by Canada's Prime Minister
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="founder-visual reveal">
+          <div class="founder-img-wrap">
+            <div class="founder-photo-placeholder">
+              <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+                <circle cx="32" cy="24" r="14" stroke="white" stroke-width="2"/>
+                <path d="M8 56c0-13.25 10.75-24 24-24s24 10.75 24 24" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              <p>Replace with your photo<br/>in the HTML file</p>
+            </div>
+          </div>
+          <div class="founder-tag-floating">
+            Founder & CEO
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <div class="container">
+      <div class="reveal" style="text-align:center; max-width:600px; margin:0 auto 0;">
+        <div class="section-tag">How It Works</div>
+        <h2 class="section-title">From idea to launched product.</h2>
+      </div>
+      <div class="process-steps">
+        <div class="process-step reveal">
+          <div class="step-num">01</div>
+          <div class="step-title">Discovery Call</div>
+          <div class="step-desc">We learn your idea, goals, and timeline. No fluff — just clarity on what needs to be built and why.</div>
+        </div>
+        <div class="process-step reveal">
+          <div class="step-num">02</div>
+          <div class="step-title">Scope & Proposal</div>
+          <div class="step-desc">We send a clear proposal with deliverables, milestones, timeline, and pricing. No surprises.</div>
+        </div>
+        <div class="process-step reveal">
+          <div class="step-num">03</div>
+          <div class="step-title">Build & Iterate</div>
+          <div class="step-desc">We build fast with weekly check-ins. You see progress every step — full transparency, no black boxes.</div>
+        </div>
+        <div class="process-step reveal">
+          <div class="step-num">04</div>
+          <div class="step-title">Launch & Support</div>
+          <div class="step-desc">We ship your product and support you post-launch. Retainer options available for ongoing work.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="reveal" style="text-align:center; max-width:600px; margin:0 auto 64px;">
+        <div class="section-tag">Social Proof</div>
+        <h2 class="section-title">What clients say.</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-quote">"RayTech didn't just build our app — they understood our vision from day one. The quality is on par with what you'd expect from a big-name agency, but with a personal touch you can't buy."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">JK</div>
+            <div>
+              <div class="author-name">James K.</div>
+              <div class="author-title">Founder, Kinetix</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-quote">"I was nervous about outsourcing development. Rayyan changed that completely. Delivered on time, communicated clearly, and the product is something I'm genuinely proud to show off."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">SM</div>
+            <div>
+              <div class="author-name">Sarah M.</div>
+              <div class="author-title">CEO, LearnFlow</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-quote">"The turnaround was unreal. 6 weeks from concept to live app. The team is sharp, responsive, and clearly knows what they're doing. Will absolutely work with RayTech again."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">DN</div>
+            <div>
+              <div class="author-name">David N.</div>
+              <div class="author-title">Co-founder, TradeLocal</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-layout">
+        <div class="reveal">
+          <div class="section-tag">Let's Build</div>
+          <h2 class="section-title">Have an idea? Let's talk.</h2>
+          <p class="section-desc">Book a free 30-minute discovery call. We'll dig into your idea, tell you what's realistic, and give you a clear path forward — no strings attached.</p>
+          <div class="contact-points">
+            <div class="contact-point">
+              <div class="cp-icon">⚡</div>
+              <div class="cp-text">
+                <strong>Fast Response</strong>
+                We respond to every inquiry within 24 hours.
+              </div>
+            </div>
+            <div class="contact-point">
+              <div class="cp-icon">🤝</div>
+              <div class="cp-text">
+                <strong>No Obligation</strong>
+                The discovery call is completely free. No pitch, just a conversation.
+              </div>
+            </div>
+            <div class="contact-point">
+              <div class="cp-icon">🌍</div>
+              <div class="cp-text">
+                <strong>Serving Canada & US</strong>
+                Based in Canada. Building for North American markets.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="reveal">
+          <div class="intake-form">
+            <div class="form-title">Book a Discovery Call</div>
+            <div id="formContent">
+              <div class="form-row">
+                <div class="form-group">
+                  <label>First Name</label>
+                  <input type="text" placeholder="John" id="fname"/>
+                </div>
+                <div class="form-group">
+                  <label>Last Name</label>
+                  <input type="text" placeholder="Smith" id="lname"/>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Email</label>
+                <input type="email" placeholder="john@company.com" id="email"/>
+              </div>
+              <div class="form-group">
+                <label>Project Type</label>
+                <select id="project-type">
+                  <option value="" disabled selected>Select a category</option>
+                  <option>Mobile App (iOS / Android)</option>
+                  <option>Web Application / SaaS</option>
+                  <option>AI / Automation</option>
+                  <option>MVP Sprint</option>
+                  <option>Ongoing Retainer</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Budget Range</label>
+                <select id="budget">
+                  <option value="" disabled selected>Select a range</option>
+                  <option>Under $5,000</option>
+                  <option>$5,000 – $15,000</option>
+                  <option>$15,000 – $50,000</option>
+                  <option>$50,000+</option>
+                  <option>Monthly Retainer</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Tell us about your idea</label>
+                <textarea id="message" placeholder="Briefly describe what you want to build, the problem it solves, and any timeline considerations..."></textarea>
+              </div>
+              <div class="form-submit">
+                <button class="submit-btn" onclick="handleSubmit()">Book My Free Call →</button>
+              </div>
+              <p class="form-note">🔒 Your info is private. No spam, ever.</p>
+            </div>
+            <div class="form-success" id="formSuccess">
+              <div class="tick">✅</div>
+              <h3>You're booked in!</h3>
+              <p>Rayyan will personally reach out within 24 hours to confirm your discovery call. Check your inbox.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-copy">
+          <div>© 2026 RayTech Lab Inc. — raytechlab.co</div>
+          <div class="footer-contact">
+            <a href="tel:+17788758417" style="color: inherit; text-decoration: none;">+1 778 875 8417</a>
+            <a href="mailto:info@raytechlab.co" style="color: inherit; text-decoration: none; margin-top: 4px; display:block;">info@raytechlab.co</a>
+            <div style="color: rgba(245,245,240,0.65); margin-top: 4px;">
+              10060-Jasper Ave #2020 Tower 1, Edmonton, AB T5J 3R8
+            </div>
+          </div>
+        </div>
+        <div class="footer-links">
+          <a href="https://rayyansiddiqui.com" target="_blank">Rayyan's Site</a>
+          <a href="mailto:info@raytechlab.co">Email</a>
+          <a href="#contact">Start a Project</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 80);
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Case study modal (popup gallery)
+    const caseModalOverlay = document.getElementById('caseModalOverlay');
+    const caseModalTag = document.getElementById('caseModalTag');
+    const caseModalTitle = document.getElementById('caseModalTitle');
+    const caseModalPlatform = document.getElementById('caseModalPlatform');
+    const caseModalDesc = document.getElementById('caseModalDesc');
+    const caseModalStats = document.getElementById('caseModalStats');
+
+    function openCaseModal(triggerEl) {
+      if (!caseModalOverlay) return;
+
+      const tagEl = triggerEl.querySelector('.case-tag');
+      const clientEl = triggerEl.querySelector('.case-client');
+      const platformEl = triggerEl.querySelector('.case-platform');
+      const descEl = triggerEl.querySelector('.case-desc');
+      const statsEl = triggerEl.querySelector('.case-stats');
+
+      caseModalTag.innerHTML = tagEl ? tagEl.innerHTML : '';
+      caseModalTitle.textContent = clientEl ? clientEl.textContent.trim() : '';
+      caseModalPlatform.textContent = platformEl ? platformEl.textContent.trim() : '';
+      caseModalDesc.textContent = descEl ? descEl.textContent.trim() : '';
+      caseModalStats.innerHTML = statsEl ? statsEl.innerHTML : '';
+
+      caseModalOverlay.classList.add('open');
+      caseModalOverlay.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('modal-open');
+    }
+
+    function closeCaseModal() {
+      if (!caseModalOverlay) return;
+      caseModalOverlay.classList.remove('open');
+      caseModalOverlay.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('modal-open');
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && caseModalOverlay && caseModalOverlay.classList.contains('open')) {
+        closeCaseModal();
+      }
+    });
+
+    // Form submit
+    function handleSubmit() {
+      const fname = document.getElementById('fname').value;
+      const email = document.getElementById('email').value;
+      const type = document.getElementById('project-type').value;
+      if (!fname || !email || !type) {
+        alert('Please fill in your name, email, and project type.');
+        return;
+      }
+      document.getElementById('formContent').style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+      // In production: replace with actual form submission (Formspree, EmailJS, etc.)
+      // e.g. fetch('https://formspree.io/f/YOUR_ID', { method: 'POST', body: formData })
+    }
+
+    // Nav scroll compact
+    window.addEventListener('scroll', () => {
+      document.querySelector('nav').style.padding = window.scrollY > 60
+        ? '12px 60px' : '20px 60px';
+    });
+  </script>
 </body>
-
 </html>
