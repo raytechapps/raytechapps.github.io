@@ -14,7 +14,7 @@ function buildRegistrationMessage(values) {
     `Student level: ${values.level}`,
     'I am an adult registering for myself or as a parent/guardian.',
     'I agree to receive registration and class updates on WhatsApp.',
-    'Please send the JazzCash/Easypaisa payment details and booking terms.'
+    'Please send me the next steps to complete my registration.'
   ].join('\n');
 }
 
