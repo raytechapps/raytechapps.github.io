@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#030b24">
 <meta name="format-detection" content="telephone=no">
-<title>RayTech Labs — Neural Architectures Built for Scale</title>
-<meta name="description" content="RayTech Labs designs and develops AI-powered products, scalable software and digital experiences that help businesses grow, innovate and lead.">
+<title>RayTech Labs — AI Implementation & Custom Software</title>
+<meta name="description" content="AI audits, implementation, automation and custom apps, websites and software for businesses. Founded by Rayyan Siddiqui.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -152,7 +152,7 @@ section{position:relative}
 .founder{display:grid;grid-template-columns:1.25fr 1fr;gap:30px;align-items:stretch}
 .f-card{display:grid;grid-template-columns:230px 1fr;gap:30px;align-items:center}
 .photo{aspect-ratio:1/1.05;border-radius:var(--r);overflow:hidden;background:linear-gradient(135deg,#0a2a7a,#1f6bff);position:relative;box-shadow:0 20px 40px rgba(10,40,120,.25)}
-.photo img{position:relative;width:100%;height:100%;object-fit:cover;object-position:52% 30%;transform:scale(1.35);transform-origin:52% 38%}
+.photo img{position:relative;width:100%;height:100%;object-fit:cover;object-position:center;transform:none}
 .photo::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18);pointer-events:none}
 .photo .init{position:absolute;inset:0;display:grid;place-items:center;font-size:64px;font-weight:800;color:#fff;letter-spacing:.02em}
 .f-card h2{font-size:clamp(24px,2.6vw,32px)}
@@ -321,6 +321,7 @@ footer{background:#020a22;border-top:1px solid rgba(120,190,255,.12);padding:34p
   .stats{margin:0}
   .float{display:none}
 }
+.hero h1{font-size:clamp(32px,4vw + 8px,58px)}.stat strong{font-size:clamp(19px,2.3vw,27px)}.tech-mark{height:44px;width:44px;display:grid;place-items:center;margin:0 auto 12px;border:1px solid var(--cyan);border-radius:12px;font-size:19px;font-weight:800;color:var(--cyan)}.claude-mark{color:#eab69a;border-color:#eab69a;font-size:34px}.credentials{display:grid;gap:18px;margin-top:22px}.credentials>div{padding-bottom:16px;border-bottom:1px solid var(--card-b)}.credentials>div:last-child{border:0;padding:0}.credentials strong{display:block;font-size:16px;color:var(--ink)}.credentials p{margin:5px 0 0;font-size:13px}.photo{aspect-ratio:1}.work-grid .proj-body{min-height:104px;justify-content:center}
 </style>
 </head>
 <body>
@@ -355,10 +356,10 @@ footer{background:#020a22;border-top:1px solid rgba(120,190,255,.12);padding:34p
     <ul>
       <li><a href="#top" class="active">Home</a></li>
       <li><a href="#ai">AI Solutions</a></li>
-      <li><a href="#build">Software</a></li>
+      <li><a href="#build">Services</a></li>
       <li><a href="#work">Our Work</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="#tech">Insights</a></li>
+      <li><a href="#tech">Technology</a></li>
     </ul>
     <div class="nav-right">
       <a href="#contact" class="btn btn-primary btn-sm">Start a Project <svg class="arr"><use href="#i-arrow"/></svg></a>
@@ -368,7 +369,7 @@ footer{background:#020a22;border-top:1px solid rgba(120,190,255,.12);padding:34p
     </div>
   </div>
   <nav class="mobile-menu" id="mmenu">
-    <a href="#top">Home</a><a href="#ai">AI Solutions</a><a href="#build">Software</a><a href="#work">Our Work</a><a href="#about">About</a><a href="#tech">Insights</a>
+    <a href="#top">Home</a><a href="#ai">AI Solutions</a><a href="#build">Services</a><a href="#work">Our Work</a><a href="#about">About</a><a href="#tech">Technology</a>
     <a href="#contact" class="btn btn-primary">Start a Project <svg class="arr"><use href="#i-arrow"/></svg></a>
   </nav>
 </header>
@@ -378,25 +379,20 @@ footer{background:#020a22;border-top:1px solid rgba(120,190,255,.12);padding:34p
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="rv">
-      <div class="eyebrow">Innovation / AI / Software / Impact</div>
-      <h1>Neural Architectures<br><span class="grad">Built for Scale.</span></h1>
-      <p class="lead">We design and develop AI-powered products, scalable software and digital experiences that help businesses grow, innovate and lead.</p>
+      <div class="eyebrow">AI Strategy / Implementation / Custom Software</div>
+      <h1>AI and software built to<br><span class="grad">move your business forward.</span></h1>
+      <p class="lead">From AI audits to custom apps and automation, RayTech helps businesses turn ideas into practical solutions—built around how you work.</p>
       <div class="cta-row">
         <a href="#contact" class="btn btn-primary">Start a Project <svg class="arr"><use href="#i-arrow"/></svg></a>
         <a href="#work" class="btn btn-ghost"><svg class="arr" style="width:20px;height:20px"><use href="#i-play"/></svg> Explore Our Work</a>
       </div>
-      <div class="stats">
-        <div class="stat"><strong data-count="20" data-suffix="+">0</strong><small>Products Shipped</small></div>
-        <div class="stat"><strong data-count="5" data-suffix="+">0</strong><small>Industries Served</small></div>
-        <div class="stat"><strong data-count="100" data-suffix="%">0</strong><small>Client Satisfaction</small></div>
-      </div>
-    </div>
+      <div class="stats"><div class="stat"><strong>Audit</strong><small>Find the right opportunities</small></div><div class="stat"><strong>Build</strong><small>Create your solution</small></div><div class="stat"><strong>Implement</strong><small>Put it to work</small></div></div></div>
     <div class="hero-visual" aria-hidden="true">
       <div class="orbit"></div><div class="orbit o2"></div>
       <canvas id="brain"></canvas>
       <div class="float f1"><div class="ic"><svg><use href="#i-bot"/></svg></div><div><b>AI Agents</b><small>Plan • Reason • Act</small></div></div>
-      <div class="float f2"><div class="ic"><svg><use href="#i-cloud"/></svg></div><div><b>Cloud Infrastructure</b><small>Scalable • Secure • Global</small></div></div>
-      <div class="float f3"><div class="ic"><svg><use href="#i-ml"/></svg></div><div><b>Machine Learning</b><small>Train • Predict • Optimize</small></div></div>
+      <div class="float f2"><div class="ic"><svg><use href="#i-cloud"/></svg></div><div><b>AI Audits</b><small>Assess • Prioritize • Plan</small></div></div>
+      <div class="float f3"><div class="ic"><svg><use href="#i-ml"/></svg></div><div><b>Automation</b><small>Connect • Simplify • Deliver</small></div></div>
       <div class="float f4"><div class="ic"><svg><use href="#i-phone"/></svg></div><div><b>Mobile &amp; Web Apps</b><small>iOS • Android • Web</small></div></div>
     </div>
   </div>
@@ -407,64 +403,39 @@ footer{background:#020a22;border-top:1px solid rgba(120,190,255,.12);padding:34p
   <div class="wrap split">
     <div class="split-intro rv">
       <div class="eyebrow">What We Build</div>
-      <h2>End-to-End Digital Solutions</h2>
-      <p>From AI-powered platforms to mobile apps, we build solutions that help businesses grow, operate smarter and stay ahead.</p>
-      <a href="#ai" class="link">Explore All Services <svg class="arr"><use href="#i-arrow"/></svg></a>
+      <h2>From Opportunity to Implementation</h2>
+      <p>We help established businesses improve how they work and founders bring new products to life. Start with an AI audit or come to us with a project ready to build.</p>
+      <a href="#contact" class="link">Discuss Your Project <svg class="arr"><use href="#i-arrow"/></svg></a>
     </div>
-    <div class="svc-grid">
-      <article class="svc rv"><div class="ic"><svg><use href="#i-brain"/></svg></div><h3>AI Solutions</h3><p>Custom AI models, agents, automation &amp; more.</p><a href="#ai" class="link">Learn More <svg class="arr"><use href="#i-arrow"/></svg></a></article>
-      <article class="svc rv"><div class="ic"><svg><use href="#i-code"/></svg></div><h3>Software Development</h3><p>Web, desktop &amp; enterprise applications.</p><a href="#contact" class="link">Learn More <svg class="arr"><use href="#i-arrow"/></svg></a></article>
-      <article class="svc rv"><div class="ic"><svg><use href="#i-phone"/></svg></div><h3>Mobile Apps</h3><p>iOS &amp; Android apps with seamless experiences.</p><a href="#work" class="link">Learn More <svg class="arr"><use href="#i-arrow"/></svg></a></article>
-      <article class="svc rv"><div class="ic"><svg><use href="#i-cloud"/></svg></div><h3>Cloud &amp; DevOps</h3><p>Scalable, secure and high-performance.</p><a href="#tech" class="link">Learn More <svg class="arr"><use href="#i-arrow"/></svg></a></article>
-    </div>
-  </div>
-</section>
+    <div class="svc-grid"><article class="svc rv"><div class="ic"><svg><use href="#i-brain"/></svg></div><h3>AI Audits &amp; Strategy</h3><p>Identify where AI can save time, reduce repetitive work and improve customer service. Get a practical plan for what to build first.</p><a href="#contact" class="link">Let's Talk <svg class="arr"><use href="#i-arrow"/></svg></a></article>
+<article class="svc rv"><div class="ic"><svg><use href="#i-bot"/></svg></div><h3>AI Implementation</h3><p>Bring AI assistants, agents and workflow automation into your business, connected to the tools your team already uses.</p><a href="#contact" class="link">Let's Talk <svg class="arr"><use href="#i-arrow"/></svg></a></article>
+<article class="svc rv"><div class="ic"><svg><use href="#i-code"/></svg></div><h3>Custom Software</h3><p>Build websites, web applications and business tools around your processes, customers and goals.</p><a href="#contact" class="link">Let's Talk <svg class="arr"><use href="#i-arrow"/></svg></a></article>
+<article class="svc rv"><div class="ic"><svg><use href="#i-phone"/></svg></div><h3>Mobile Apps</h3><p>Turn your product idea into an iOS and Android app with an experience designed for your users.</p><a href="#contact" class="link">Let's Talk <svg class="arr"><use href="#i-arrow"/></svg></a></article></div></div></section>
 
 <!-- SELECTED WORK -->
-<section class="dark sec" id="work">
-  <div class="wrap split">
-    <div class="split-intro rv">
-      <div class="eyebrow">Selected Work</div>
-      <h2>Real Products.<br>Real Impact.</h2>
-      <p>Explore some of our recent projects and see how we turn ideas into powerful digital products.</p>
-      <a href="#work" class="link">View All Projects <svg class="arr"><use href="#i-arrow"/></svg></a>
-    </div>
-    <div class="work-grid">
-      <article class="proj rv">
-        <div class="mock m1"><div class="phone"><i style="height:10px;width:60%"></i><i style="height:40px;border-radius:50%;width:40px;margin:4px auto;background:conic-gradient(#22e6d8 70%,rgba(255,255,255,.15) 0)"></i><i style="height:8px"></i><i style="height:8px;width:70%"></i><i style="height:20px"></i></div><div class="phone" style="transform:translateY(14px)"><i style="height:10px;width:50%"></i><i style="height:34px"></i><i style="height:8px"></i><i style="height:8px;width:60%"></i><i style="height:26px"></i></div></div>
-        <div class="proj-body"><h3>KINETIX</h3><div class="tags">Healthcare • AI • Mobile</div><p>AI-powered health &amp; fitness platform with personalized coaching.</p><a href="#contact" class="link">View Case Study <svg class="arr"><use href="#i-arrow"/></svg></a></div>
-      </article>
-      <article class="proj rv">
-        <div class="mock m2"><div class="screen"><i style="grid-column:span 2;height:8px;background:#c7d6f5"></i><i style="height:34px;background:#dbe6ff"></i><i style="height:34px;background:#e6ecfb"></i><div class="bars"><i style="height:20px"></i><i style="height:32px"></i><i style="height:14px"></i><i style="height:28px"></i><i style="height:36px"></i></div></div><div class="phone w"><i style="height:10px;background:#c7d6f5"></i><i style="height:40px;background:#dbe6ff"></i><i style="height:8px;background:#e6ecfb"></i><i style="height:28px;background:#dbe6ff"></i></div></div>
-        <div class="proj-body"><h3>EduSmart</h3><div class="tags">EdTech • Web • Mobile</div><p>Intelligent learning platform with AI-driven recommendations.</p><a href="#contact" class="link">View Case Study <svg class="arr"><use href="#i-arrow"/></svg></a></div>
-      </article>
-      <article class="proj rv">
-        <div class="mock m3"><div class="screen dk"><i style="grid-column:span 2;height:8px"></i><div class="bars" style="height:44px"><i style="height:18px"></i><i style="height:30px"></i><i style="height:24px"></i><i style="height:40px"></i><i style="height:34px"></i><i style="height:44px"></i></div><i style="height:26px"></i><i style="height:26px"></i></div><div class="phone"><i style="height:10px"></i><div class="bars" style="height:40px"><i style="height:14px"></i><i style="height:26px"></i><i style="height:20px"></i><i style="height:36px"></i></div><i style="height:8px"></i><i style="height:22px"></i></div></div>
-        <div class="proj-body"><h3>TradeFlow</h3><div class="tags">FinTech • Web • Mobile</div><p>Smart trading analytics platform for modern investors.</p><a href="#contact" class="link">View Case Study <svg class="arr"><use href="#i-arrow"/></svg></a></div>
-      </article>
-      <article class="proj rv">
-        <div class="mock m4"><div class="phone w"><i style="height:10px;width:60%"></i><i style="height:36px;background:#bfe6c9"></i><i style="height:8px"></i><i style="height:8px;width:70%"></i><i style="height:24px"></i></div><div class="phone w" style="transform:translateY(14px)"><i style="height:10px;width:50%"></i><i style="height:40px;border-radius:50%;width:40px;margin:4px auto;background:conic-gradient(#2fa85a 62%,#e5f3e9 0)"></i><i style="height:8px"></i><i style="height:22px"></i></div></div>
-        <div class="proj-body"><h3>GreenTrack</h3><div class="tags">Sustainability • Web • Mobile</div><p>Carbon tracking &amp; sustainability management solution.</p><a href="#contact" class="link">View Case Study <svg class="arr"><use href="#i-arrow"/></svg></a></div>
-      </article>
-    </div>
-  </div>
-</section>
-
+<section class="dark sec" id="work"><div class="wrap split"><div class="split-intro rv"><div class="eyebrow">Selected Projects</div><h2>Businesses we've worked with.</h2><p>A selection of RayTech's client projects.</p><a href="#contact" class="link">Discuss Your Project <svg class="arr"><use href="#i-arrow"/></svg></a></div><div class="work-grid"><article class="proj rv"><div class="proj-body"><h3>Kinetix</h3><div class="tags">Physiotherapy platform</div></div></article>
+<article class="proj rv"><div class="proj-body"><h3>Vidanta Resorts</h3></div></article>
+<article class="proj rv"><div class="proj-body"><h3>PawMatch</h3></div></article>
+<article class="proj rv"><div class="proj-body"><h3>RopeDocs</h3></div></article>
+<article class="proj rv"><div class="proj-body"><h3>GrapeVine</h3></div></article>
+<article class="proj rv"><div class="proj-body"><h3>Tanzey</h3></div></article>
+<article class="proj rv"><div class="proj-body"><h3>Jessie's</h3></div></article>
+<article class="proj rv"><div class="proj-body"><h3>Blink</h3></div></article></div></div></section>
 <!-- AI CAPABILITIES -->
 <section class="light sec" id="ai">
   <div class="wrap split">
     <div class="split-intro rv">
       <div class="eyebrow">AI Capabilities</div>
-      <h2>AI That Powers Real Business Value</h2>
-      <p>From automation to intelligent agents, we build AI solutions that work.</p>
-      <a href="#contact" class="link">Explore AI Solutions <svg class="arr"><use href="#i-arrow"/></svg></a>
+      <h2>Make AI Part of Your Business</h2>
+      <p>Start with your business challenge. We identify useful applications for AI, build the solution and connect it to your existing workflows.</p>
+      <a href="#contact" class="link">Discuss AI Implementation <svg class="arr"><use href="#i-arrow"/></svg></a>
     </div>
     <div class="caps">
       <div class="cap rv"><div class="ic"><svg><use href="#i-bot"/></svg></div><b>AI Agents</b></div>
       <div class="cap rv"><div class="ic"><svg><use href="#i-gear"/></svg></div><b>Automation</b></div>
-      <div class="cap rv"><div class="ic"><svg><use href="#i-eye"/></svg></div><b>Computer Vision</b></div>
+      <div class="cap rv"><div class="ic"><svg><use href="#i-eye"/></svg></div><b>AI Audits</b></div>
       <div class="cap rv"><div class="ic"><svg><use href="#i-spark"/></svg></div><b>Generative AI</b></div>
-      <div class="cap rv"><div class="ic"><svg><use href="#i-chat"/></svg></div><b>NLP</b></div>
+      <div class="cap rv"><div class="ic"><svg><use href="#i-chat"/></svg></div><b>AI Assistants</b></div>
       <div class="cap rv"><div class="ic"><svg><use href="#i-doc"/></svg></div><b>Document Intelligence</b></div>
     </div>
   </div>
@@ -475,17 +446,17 @@ footer{background:#020a22;border-top:1px solid rgba(120,190,255,.12);padding:34p
   <div class="wrap split">
     <div class="split-intro rv">
       <div class="eyebrow">Our Technology</div>
-      <h2>Built on Modern Technology</h2>
-      <p>We use the latest tools and frameworks to build fast, secure and scalable solutions.</p>
-      <a href="#contact" class="link">Learn More <svg class="arr"><use href="#i-arrow"/></svg></a>
+      <h2>The technology behind our solutions.</h2>
+      <p>We combine AI models with proven development tools to build solutions around your business needs.</p>
+      <a href="#contact" class="link">Talk to Our Team <svg class="arr"><use href="#i-arrow"/></svg></a>
     </div>
     <div class="stack rv">
-      <div class="tech"><svg viewBox="0 0 48 48" fill="none" stroke="#61dafb" stroke-width="2"><ellipse cx="24" cy="24" rx="20" ry="8"/><ellipse cx="24" cy="24" rx="20" ry="8" transform="rotate(60 24 24)"/><ellipse cx="24" cy="24" rx="20" ry="8" transform="rotate(120 24 24)"/><circle cx="24" cy="24" r="3.5" fill="#61dafb"/></svg><span>React</span></div>
+      <div class="tech"><svg viewBox="0 0 48 48" fill="none" stroke="#61dafb" stroke-width="2"><ellipse cx="24" cy="24" rx="20" ry="8"/><ellipse cx="24" cy="24" rx="20" ry="8" transform="rotate(60 24 24)"/><ellipse cx="24" cy="24" rx="20" ry="8" transform="rotate(120 24 24)"/><circle cx="24" cy="24" r="3.5" fill="#61dafb"/></svg><span>React &amp;<br>React Native</span></div>
       <div class="tech"><svg viewBox="0 0 48 48" fill="none"><path d="M24 3l18 10.5v21L24 45 6 34.5v-21z" stroke="#5fa04e" stroke-width="2.4"/><path d="M19 30V18l10 12V18" stroke="#8cc84b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Node.js</span></div>
       <div class="tech"><svg viewBox="0 0 48 48"><path d="M23.6 4c-8 0-7.5 3.5-7.5 3.5V11h7.7v1.1H13s-5.2-.6-5.2 7.6 4.5 7.9 4.5 7.9H15v-3.8s-.1-4.5 4.5-4.5h7.6s4.3.1 4.3-4.2V8.4S32 4 23.6 4zm-4.2 2.4a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8z" fill="#3b77a8"/><path d="M24.4 44c8 0 7.5-3.5 7.5-3.5V37h-7.7v-1.1H35s5.2.6 5.2-7.6-4.5-7.9-4.5-7.9H33v3.8s.1 4.5-4.5 4.5h-7.6s-4.3-.1-4.3 4.2v6.7S16 44 24.4 44zm4.2-2.4a1.4 1.4 0 1 1 0-2.8 1.4 1.4 0 0 1 0 2.8z" fill="#ffd43b"/></svg><span>Python</span></div>
       <div class="tech"><svg viewBox="0 0 48 48" fill="none"><text x="24" y="26" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="15" fill="#fff">aws</text><path d="M10 32c8 5 20 5 28 0" stroke="#ff9900" stroke-width="2.6" stroke-linecap="round"/><path d="M34 29l4 3-4.5 1.5" stroke="#ff9900" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>AWS</span></div>
-      <div class="tech"><svg viewBox="0 0 48 48" fill="#2496ed"><rect x="8" y="20" width="5" height="5"/><rect x="14" y="20" width="5" height="5"/><rect x="20" y="20" width="5" height="5"/><rect x="26" y="20" width="5" height="5"/><rect x="14" y="14" width="5" height="5"/><rect x="20" y="14" width="5" height="5"/><rect x="26" y="14" width="5" height="5"/><rect x="20" y="8" width="5" height="5"/><path d="M4 27h35c2 0 3-2 3.5-3.5 2 .2 3.3-.8 4-2-1-.8-3-1-4.3-.5-.4-2-1.6-3.2-3-4-1 1.4-1.3 3.4-.6 5-1 .6-2.5.9-4 .9H4.3C4 31 7 39 17 39c10 0 18.5-4.5 22-12z"/></svg><span>Docker</span></div>
-      <div class="tech"><svg viewBox="0 0 48 48" fill="none" stroke="#6fa8dc" stroke-width="2.2" stroke-linecap="round"><ellipse cx="24" cy="10" rx="14" ry="5"/><path d="M10 10v28c0 2.8 6.3 5 14 5s14-2.2 14-5V10"/><path d="M10 19c0 2.8 6.3 5 14 5s14-2.2 14-5M10 28c0 2.8 6.3 5 14 5s14-2.2 14-5"/></svg><span>PostgreSQL</span></div>
+      <div class="tech"><div class="tech-mark" aria-hidden="true">AI</div><span>OpenAI</span></div>
+      <div class="tech"><div class="tech-mark claude-mark" aria-hidden="true">✳</div><span>Claude / Anthropic</span></div>
     </div>
   </div>
 </section>
@@ -496,29 +467,16 @@ footer{background:#020a22;border-top:1px solid rgba(120,190,255,.12);padding:34p
     <div class="f-card rv">
       <div class="photo">
         <div class="init">RS</div>
-        <img src="rayyan.jpg" alt="Rayyan Siddiqui, Founder of RayTech Labs" loading="lazy" onerror="this.remove()">
+        <img src="rayyan-founder.svg" alt="Rayyan Siddiqui, Founder of RayTech Labs" loading="lazy" onerror="this.remove()">
       </div>
       <div>
-        <div class="eyebrow">Founder &amp; Vision</div>
-        <h2>Building a Future with AI &amp; Purpose</h2>
-        <p>Rayyan Siddiqui, Founder of RayTech Labs, is an award-winning young innovator, recognized by Microsoft, Guinness World Records and featured in leading media outlets for his work in AI and technology.</p>
-        <a href="#contact" class="link">Meet Rayyan <svg class="arr"><use href="#i-arrow"/></svg></a>
+        <div class="eyebrow">Founded by Rayyan Siddiqui</div>
+        <h2>Technical experience.<br>Business focus.</h2>
+        <p>Rayyan started coding at nine and joined Microsoft as a software engineer at sixteen. Today, he leads RayTech, helping businesses apply AI and build custom software, apps and websites.</p>
+        <a href="#contact" class="link">Work With RayTech <svg class="arr"><use href="#i-arrow"/></svg></a>
       </div>
     </div>
-    <div class="recog rv">
-      <div class="eyebrow">Recognized By</div>
-      <div class="logos">
-        <div class="lg"><svg width="26" height="26" viewBox="0 0 26 26"><rect width="12" height="12" fill="#f25022"/><rect x="14" width="12" height="12" fill="#7fba00"/><rect y="14" width="12" height="12" fill="#00a4ef"/><rect x="14" y="14" width="12" height="12" fill="#ffb900"/></svg>Microsoft</div>
-        <div class="lg"><svg width="40" height="40" viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="#1b2340"/><circle cx="20" cy="20" r="13" fill="none" stroke="#c9a94a" stroke-width="2"/><path d="M20 12l2.4 5 5.4.6-4 3.7 1.1 5.3L20 24l-4.9 2.6 1.1-5.3-4-3.7 5.4-.6z" fill="#c9a94a"/></svg><div class="gwr">GUINNESS<br>WORLD<br>RECORDS</div></div>
-        <div class="lg"><svg width="34" height="34" viewBox="0 0 34 34"><circle cx="17" cy="17" r="5" fill="#e60505"/><g fill="#e60505"><path d="M17 0a7 7 0 0 1 0 10z"/><path d="M17 34a7 7 0 0 1 0-10z"/><path d="M0 17a7 7 0 0 1 10 0z"/><path d="M34 17a7 7 0 0 1-10 0z"/><path d="M5 5a7 7 0 0 1 7 7z"/><path d="M29 29a7 7 0 0 1-7-7z"/><path d="M29 5a7 7 0 0 1-7 7z"/><path d="M5 29a7 7 0 0 1 7-7z"/></g></svg><span class="cbc">CBC</span></div>
-        <div class="lg"><span class="canada">Canad<em>ä</em></span><svg width="26" height="18" viewBox="0 0 30 20"><rect width="7" height="20" fill="#d52b1e"/><rect x="23" width="7" height="20" fill="#d52b1e"/><path d="M15 3l1.3 2.6 1.6-.7-.6 4 2.2-1.8.5 1.3 1.8-.3-.8 2.4.9.5L18 13l.3 1.2-3-.4V17h-.6v-3.2l-3 .4.3-1.2-3.8-2.6.9-.5-.8-2.4 1.8.3.5-1.3 2.2 1.8-.6-4 1.6.7z" fill="#d52b1e"/></svg></div>
-      </div>
-      <div class="mini-stats">
-        <div><strong>20+</strong><small>Products</small></div>
-        <div><strong>5+</strong><small>Industries</small></div>
-        <div><strong>100%</strong><small>Client Satisfaction</small></div>
-      </div>
-    </div>
+    <div class="recog rv"><div class="eyebrow">Founder Credentials</div><div class="credentials"><div><strong>Guinness World Record Holder</strong><p>Youngest software engineer (male)</p></div><div><strong>Microsoft at 16</strong><p>Joined as a software engineer</p></div><div><strong>Microsoft Change Makers</strong><p>Featured in Microsoft's 50th anniversary campaign</p></div><div><strong>MISK 20 Under 30</strong><p>Award recipient</p></div></div></div>
   </div>
 </section>
 
@@ -533,7 +491,7 @@ footer{background:#020a22;border-top:1px solid rgba(120,190,255,.12);padding:34p
       </div>
       <div class="cta-btns">
         <a href="#contact" class="btn btn-primary">Start a Project <svg class="arr"><use href="#i-arrow"/></svg></a>
-        <a href="mailto:hello@raytechlab.co?subject=Schedule%20a%20Call" class="btn btn-ghost"><svg class="arr" style="width:18px;height:18px"><use href="#i-cal"/></svg> Schedule a Call</a>
+        <a href="mailto:support@raytechlab.co?subject=Project%20Enquiry" class="btn btn-ghost"><svg class="arr" style="width:18px;height:18px"><use href="#i-cal"/></svg> Email Our Team</a>
       </div>
     </div>
   </div>
@@ -544,14 +502,15 @@ footer{background:#020a22;border-top:1px solid rgba(120,190,255,.12);padding:34p
     <div class="rv">
       <div class="eyebrow">Contact Us</div>
       <h2>Let's Talk About Your Project</h2>
-      <p>Tell us what you're building. Our team will review your project and get back to you within one business day.</p>
+      <p>Tell us about your business, the problem you want to solve or the product you want to build. Our team will review your enquiry and discuss the next steps with you.</p>
       <ul class="c-info">
-        <li><span class="ic"><svg><use href="#i-mail"/></svg></span><div><small>Email</small><a href="mailto:hello@raytechlab.co">hello@raytechlab.co</a></div></li>
+        <li><span class="ic"><svg><use href="#i-mail"/></svg></span><div><small>Email</small><a href="mailto:support@raytechlab.co">support@raytechlab.co</a></div></li>
         <li><span class="ic"><svg><use href="#i-pin"/></svg></span><div><small>Location</small>Canada · Serving clients worldwide</div></li>
-        <li><span class="ic"><svg><use href="#i-clock"/></svg></span><div><small>Response time</small>Within 24 hours</div></li>
+        <li><span class="ic"><svg><use href="#i-clock"/></svg></span><div><small>Next step</small>A conversation about your project</div></li>
       </ul>
     </div>
     <form class="form rv" id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+      <!-- Existing public Web3Forms form identifier, preserved unchanged. Intended for client-side use: https://docs.web3forms.com/getting-started/faq -->
       <input type="hidden" name="access_key" value="7a8cec38-dfc2-49a8-bb0b-fa6cfdf19f4c">
       <input type="hidden" name="subject" value="New Submission from RayTech Labs Contact Form">
       <input type="hidden" name="from_name" value="RayTech Labs Website">
@@ -561,8 +520,8 @@ footer{background:#020a22;border-top:1px solid rgba(120,190,255,.12);padding:34p
         <div class="field"><label for="cf-phone">Phone</label><input id="cf-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+1 555 000 0000" maxlength="30"><span class="em"></span></div>
         <div class="field"><label for="cf-company">Company</label><input id="cf-company" name="company" type="text" autocomplete="organization" placeholder="Company name" maxlength="100"><span class="em"></span></div>
         <div class="field"><label for="cf-service">Service <i>*</i></label>
-          <select id="cf-service" name="service" required><option value="">Select a service</option><option>AI Solutions</option><option>Software Development</option><option>Mobile Apps</option><option>Cloud &amp; DevOps</option><option>Other</option></select><span class="em"></span></div>
-        <div class="field"><label for="cf-budget">Budget</label>
+          <select id="cf-service" name="service" required><option value="">Select a service</option><option>AI Audit &amp; Strategy</option><option>AI Implementation &amp; Automation</option><option>Custom Software &amp; Websites</option><option>Mobile Apps</option><option>Other</option></select><span class="em"></span></div>
+        <div class="field"><label for="cf-budget">Project Budget (USD)</label>
           <select id="cf-budget" name="budget"><option value="">Select a range</option><option>Under $5k</option><option>$5k – $15k</option><option>$15k – $50k</option><option>$50k+</option></select><span class="em"></span></div>
         <div class="field full"><label for="cf-msg">Project Details <i>*</i></label><textarea id="cf-msg" name="message" placeholder="Briefly describe what you want to build, the problem it solves, and any timeline constraints." required minlength="10" maxlength="3000"></textarea><span class="em"></span></div>
         <label class="consent"><input type="checkbox" name="consent" id="cf-consent" required> I agree to be contacted by RayTech Labs about my enquiry.</label>
@@ -584,14 +543,10 @@ footer{background:#020a22;border-top:1px solid rgba(120,190,255,.12);padding:34p
       <div><b>RAYTECH</b> <span>LABS</span></div>
     </a>
     <ul>
-      <li><a href="#top">Home</a></li><li><a href="#ai">AI Solutions</a></li><li><a href="#build">Software</a></li><li><a href="#work">Our Work</a></li><li><a href="#about">About</a></li><li><a href="#tech">Insights</a></li>
+      <li><a href="#top">Home</a></li><li><a href="#ai">AI Solutions</a></li><li><a href="#build">Services</a></li><li><a href="#work">Our Work</a></li><li><a href="#about">About</a></li><li><a href="#tech">Technology</a></li>
     </ul>
-    <div class="social">
-      <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9V21H9z"/></svg></a>
-      <a href="https://x.com/" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.8 3h3.1l-6.8 7.7L22 21h-6.2l-4.9-6.4L5.3 21H2.2l7.3-8.3L2 3h6.4l4.4 5.8zm-1.1 16.2h1.7L7.4 4.7H5.6z"/></svg></a>
-      <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.7 15.1V8.9l5.8 3.1z"/></svg></a>
-    </div>
-    <div class="copy">© <span id="yr">2025</span> RayTech Labs.<br>All rights reserved.</div>
+    
+    <div class="copy">© <span id="yr">2026</span> RayTech Labs.<br>All rights reserved.</div>
   </div>
 </footer>
 
@@ -643,7 +598,7 @@ footer{background:#020a22;border-top:1px solid rgba(120,190,255,.12);padding:34p
   document.getElementById('yr').textContent = new Date().getFullYear();
 
   // Contact form (Web3Forms). Put your access key from web3forms.com in the hidden "access_key" input.
-  const CONTACT = { email: 'hello@raytechlab.co' };
+  const CONTACT = { email: 'support@raytechlab.co' };
   const cf = document.getElementById('contact-form'), cfBtn = document.getElementById('cf-submit'), cfStatus = document.getElementById('cf-status');
   const setErr = (el, msg) => { const f = el.closest('.field'); if (!f) return; f.classList.toggle('err', !!msg); f.querySelector('.em').textContent = msg || ''; };
   const check = el => {
@@ -678,7 +633,7 @@ footer{background:#020a22;border-top:1px solid rgba(120,190,255,.12);padding:34p
       const json = await res.json().catch(() => ({}));
       if (!res.ok || !json.success) throw new Error(json.message);
       cf.reset();
-      status("Thanks! Your message has been sent. We'll be in touch within 24 hours.", 'ok');
+      status("Thanks! Your message has been sent. Our team will review your enquiry and be in touch.", 'ok');
     } catch (err) {
       status(`${err.message || 'Something went wrong.'} Please try again or email us at ${CONTACT.email}.`, 'bad');
     } finally {
