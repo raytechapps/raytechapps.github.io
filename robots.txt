@@ -1,0 +1,30 @@
+# robots.txt for https://raytechlab.co
+
+# OpenAI: model training crawler and ChatGPT Search
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+# Google Gemini (AI training/grounding) and Google Search
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+# Microsoft Copilot uses the Bing index
+User-agent: Bingbot
+Allow: /
+
+# Everyone else
+User-agent: *
+Allow: /
